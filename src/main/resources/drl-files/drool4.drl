@@ -1,0 +1,6 @@
+rule "Escalate Long Pending Cases"
+when
+    $case : Case(status == Status.OPEN, daysPending > 7)
+then
+    $case.setStatus(Status.ESCALATED);
+end

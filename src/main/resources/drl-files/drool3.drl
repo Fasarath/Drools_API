@@ -1,0 +1,6 @@
+rule "Notify Supervisor for Critical Cases"
+when
+    $case : Case(severity == Severity.CRITICAL)
+then
+    $notificationService.notifySupervisor($case);
+end
